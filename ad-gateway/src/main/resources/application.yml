@@ -1,0 +1,25 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: ad-gateway
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    jedis:
+      pool:
+        max-wait: -1ms
+        max-active: 8
+        min-idle: 5
+        time-between-eviction-runs: 6000ms
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8761/eureka
+  instance:
+    instance-id: gateway9000
+api:
+  whiteUrl: /ad-ucenter/ucenter/login
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+
